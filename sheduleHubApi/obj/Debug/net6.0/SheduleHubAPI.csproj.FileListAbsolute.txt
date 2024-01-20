@@ -68,3 +68,8 @@ C:\Users\dshin\OneDrive\Рабочий стол\SheduleHubAPI\SheduleHubAPI\bin\
 C:\Users\dshin\OneDrive\Рабочий стол\SheduleHubAPI\SheduleHubAPI\bin\Debug\net6.0\Humanizer.dll
 C:\Users\dshin\OneDrive\Рабочий стол\SheduleHubAPI\SheduleHubAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\dshin\OneDrive\Рабочий стол\SheduleHubAPI\SheduleHubAPI\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\dshin\OneDrive\Рабочий стол\sheduleHubAPI\SheduleHubAPI\obj\Debug\net6.0\SheduleHubAPI.sourcelink.json
+C:\Users\dshin\OneDrive\Рабочий стол\sheduleHubAPI\SheduleHubAPI\bin\Debug\net6.0\SheduleHubAPI.xml
+C:\Users\dshin\OneDrive\Рабочий стол\sheduleHubAPI\SheduleHubAPI\obj\Debug\net6.0\SheduleHubAPI.xml
+C:\Users\dshin\OneDrive\Рабочий стол\sheduleHubAPI\SheduleHubAPI\bin\Debug\net6.0\Mapster.dll
+C:\Users\dshin\OneDrive\Рабочий стол\sheduleHubAPI\SheduleHubAPI\bin\Debug\net6.0\Mapster.Core.dll

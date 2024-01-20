@@ -1,6 +1,9 @@
 ﻿using DataAccess.Models;
+using Mapster;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SheduleHubAPI.Contracts.Speciality;
+using SheduleHubAPI.Contracts.Student;
 
 namespace SheduleHubAPI.Controllers
 {
@@ -15,6 +18,10 @@ namespace SheduleHubAPI.Controllers
             Context = context;
         }
 
+        /// <summary>
+        /// Получение всех специальностей
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
 
         public IActionResult GetAll()
@@ -23,6 +30,11 @@ namespace SheduleHubAPI.Controllers
             return Ok(specialities);
         }
 
+        /// <summary>
+        /// Поиск специальности по id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
 
         public IActionResult Get(int id)
@@ -35,29 +47,56 @@ namespace SheduleHubAPI.Controllers
             return Ok(speciality);
         }
 
+        /// <summary>
+        /// Добавление специальности
+        /// </summary>
+        /// <remarks>
+        /// План заполнение: 
+        /// 
+        ///         Post /Todo
+        ///         {
+        ///            "nameSpeciality": "string",
+        ///            "createdBy": 0,
+        ///            "createdAt": "2024-01-19T08:56:19.871Z"
+        ///         }
+        /// </remarks>
+        /// <param name="speciality"></param>
+        /// <returns></returns>
+        // Post api/<SpecialityController>
         [HttpPost]
 
-        public IActionResult Add(Speciality speciality)
+        public async Task<IActionResult> Add(CreateSpecialityRequest request)
         {
-            Context.Specialities.Add(speciality);
+            var userDto = request.Adapt<Speciality>();
+            Context.Specialities.Add(userDto);
             Context.SaveChanges();
-            return Ok(speciality);
+            return Ok();
         }
 
+        /// <summary>
+        /// Изменение специальности
+        /// </summary>
+        /// <param name="speciality"></param>
+        /// <returns></returns>
         [HttpPut]
 
-        public IActionResult Update(Speciality speciality)
+        public async Task<IActionResult> Update(CreateSpecialityRequest request)
         {
-            Context.Specialities.Update(speciality);
+            var userDto = request.Adapt<Speciality>();
+            Context.Specialities.Update(userDto);
             Context.SaveChanges();
-            return Ok(speciality);
+            return Ok();
         }
-
+        /// <summary>
+        /// Удаление 
+        /// </summary>
+        /// <param name="specialityID"></param>
+        /// <returns></returns>
         [HttpDelete]
 
-        public IActionResult Delete(int roleID)
+        public IActionResult Delete(int specialityID)
         {
-            Speciality? speciality = Context.Specialities.Where(x => x.IdSpeciality == roleID).FirstOrDefault();
+            Speciality? speciality = Context.Specialities.Where(x => x.IdSpeciality == specialityID).FirstOrDefault();
             if (speciality == null)
             {
                 return BadRequest("Not Found");

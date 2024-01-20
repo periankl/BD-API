@@ -1,6 +1,9 @@
 ﻿using DataAccess.Models;
+using Mapster;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SheduleHubAPI.Contracts.Student;
+using SheduleHubAPI.Contracts.StudentGroup;
 
 namespace SheduleHubAPI.Controllers
 {
@@ -15,6 +18,10 @@ namespace SheduleHubAPI.Controllers
             Context = context;
         }
 
+        /// <summary>
+        /// Получение всех групп
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
 
         public IActionResult GetAll()
@@ -23,6 +30,11 @@ namespace SheduleHubAPI.Controllers
             return Ok(studentGroups);
         }
 
+        /// <summary>
+        /// Поиск группы по id
+        /// </summary>
+        /// <param name="groupID"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
 
         public IActionResult Get(int groupID)
@@ -35,24 +47,54 @@ namespace SheduleHubAPI.Controllers
             return Ok(group);
         }
 
+        /// <summary>
+        /// Добавление группы
+        /// </summary>
+        /// <remarks>
+        /// Пример заполнения:
+        /// 
+        ///         POST /Todo
+        ///         {
+        ///           "nameGroup": "string",
+        ///           "idSpeciality": 0,
+        ///           "courseNum": 0,
+        ///           "createdBy": 0,
+        ///           "createdAt": "2024-01-19T08:58:43.790Z"
+        ///         }
+        ///   
+        /// </remarks>
+        /// <param name="group"></param>
+        /// <returns></returns>
+
+        // Post api/<StudentGroupController>
         [HttpPost]
-
-        public IActionResult Add(StudentGroup group)
+        public async Task<IActionResult> Add(CreateStudentGroupRequest request)
         {
-            Context.StudentGroups.Add(group);
+            var userDto = request.Adapt<StudentGroup>();
+            Context.StudentGroups.Add(userDto);
             Context.SaveChanges();
-            return Ok(group);
+            return Ok();
         }
-
+        /// <summary>
+        /// Изменение группы
+        /// </summary>
+        /// <param name="group"></param>
+        /// <returns></returns>
         [HttpPut]
 
-        public IActionResult Update(StudentGroup group)
+        public async Task<IActionResult> Update(CreateStudentGroupRequest request)
         {
-            Context.StudentGroups.Update(group);
+            var userDto = request.Adapt<StudentGroup>();
+            Context.StudentGroups.Update(userDto);
             Context.SaveChanges();
-            return Ok(group);
+            return Ok();
         }
 
+        /// <summary>
+        /// Удаление группы
+        /// </summary>
+        /// <param name="groupID"></param>
+        /// <returns></returns>
         [HttpDelete]
 
         public IActionResult Delete(int groupID)

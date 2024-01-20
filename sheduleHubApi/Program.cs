@@ -1,5 +1,6 @@
 using DataAccess.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 namespace SheduleHubAPI
 {
@@ -22,7 +23,28 @@ namespace SheduleHubAPI
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddSwaggerGen(options =>
+                {
+                    options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+                    {
+                        Version = "v1",
+                        Title = "SheduleHubAPI",
+                        Description = "API для работы сервиса SheduleHub",
+                        Contact = new Microsoft.OpenApi.Models.OpenApiContact
+                        {
+                            Name = "Пример Контакта SheduleHub",
+                            Url = new Uri("https://example.com/contact")
+                        },
+                        License = new Microsoft.OpenApi.Models.OpenApiLicense
+                        {
+                            Name = "SheduleHub License",
+                            Url = new Uri("https://example.com/license")
+                        }
+                    });
+                    // using System.Reflection
+                    var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                    options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
+                });
 
             var app = builder.Build();
 

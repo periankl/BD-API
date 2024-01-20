@@ -1,6 +1,9 @@
 ﻿using DataAccess.Models;
+using Mapster;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SheduleHubAPI.Contracts.Homework;
+using SheduleHubAPI.Contracts.Student;
 
 namespace SheduleHubAPI.Controllers
 {
@@ -15,6 +18,11 @@ namespace SheduleHubAPI.Controllers
             Context = context;
         }
 
+        /// <summary>
+        /// Получение всех домашних работ
+        /// </summary>
+        /// <returns></returns>
+
         [HttpGet]
 
         public IActionResult GetAll()
@@ -23,6 +31,11 @@ namespace SheduleHubAPI.Controllers
             return Ok(homework);
         }
 
+        /// <summary>
+        /// Получение домашней работы по id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
 
         public IActionResult Get(int id)
@@ -35,24 +48,52 @@ namespace SheduleHubAPI.Controllers
             return Ok(homework);
         }
 
+        /// <summary>
+        /// Добавление нового домашнего задания
+        /// </summary>
+        /// <remarks>
+        /// Пример заполнения:
+        /// 
+        ///     Post /Todo
+        ///     {
+        ///          "task": "string",
+        ///          "createdBy": 0,
+        ///          "createdAt": "2024-01-19T08:41:15.690Z"
+        ///      }
+        ///      
+        /// </remarks>
+        /// <param name="homework"></param>
+        /// <returns></returns>
+        // Post api/<HomeworkController>
         [HttpPost]
 
-        public IActionResult Add(Homework homework)
+        public async Task<IActionResult> Add(CreateHomeworkRequest request)
         {
-            Context.Homeworks.Add(homework);
+            var userDto = request.Adapt<Homework>();
+            Context.Homeworks.Add(userDto);
             Context.SaveChanges();
-            return Ok(homework);
+            return Ok();
         }
 
+        /// <summary>
+        /// Изменение домашней работы
+        /// </summary>
+        /// <param name="homework"></param>
+        /// <returns></returns>
         [HttpPut]
 
-        public IActionResult Update(Homework homework)
+        public async Task<IActionResult> Update(CreateHomeworkRequest request)
         {
-            Context.Homeworks.Update(homework);
+            var userDto = request.Adapt<Homework>();
+            Context.Homeworks.Update(userDto);
             Context.SaveChanges();
-            return Ok(homework);
+            return Ok();
         }
-
+        /// <summary>
+        /// Удаление домашней работы
+        /// </summary>
+        /// <param name="homeworkId"></param>
+        /// <returns></returns>
         [HttpDelete]
 
         public IActionResult Delete(int homeworkId)

@@ -1,6 +1,9 @@
 ﻿using DataAccess.Models;
+using Mapster;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SheduleHubAPI.Contracts.Student;
+using SheduleHubAPI.Contracts.StudentRole;
 
 namespace SheduleHubAPI.Controllers
 {
@@ -15,6 +18,11 @@ namespace SheduleHubAPI.Controllers
             Context = context;
         }
 
+
+        /// <summary>
+        /// Получение всех ролей пользовталей
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
 
         public IActionResult GetAll()
@@ -23,6 +31,11 @@ namespace SheduleHubAPI.Controllers
             return Ok(role);
         }
 
+        /// <summary>
+        /// Получение роли по id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
 
         public IActionResult Get(int id)
@@ -34,25 +47,52 @@ namespace SheduleHubAPI.Controllers
             }
             return Ok(role);
         }
+        /// <summary>
+        /// Создание нового пользователя
+        /// </summary>
+        /// <remarks>
+        /// Пример запроса: 
+        /// 
+        ///     Post /Todo
+        ///     { 
+        ///           "nameRole": "string",
+        ///           "createdBy": 0,
+        ///           "createdAt": "2024-01-19T09:08:17.851Z"
+        ///      }
+        ///     
+        /// </remarks>
+        /// <param name="Роль"></param>
+        /// <returns></returns>
 
+        // Post api/<RoleController>
         [HttpPost]
 
-        public IActionResult Add(StudentRole role)
+        public async Task<IActionResult> Add(CreateStudentRoleRequest request)
         {
-            Context.StudentRoles.Add(role);
+            var userDto = request.Adapt<StudentRole>();
+            Context.StudentRoles.Add(userDto);
             Context.SaveChanges();
-            return Ok(role);
+            return Ok();
         }
-
+        /// <summary>
+        /// Изменение роли
+        /// </summary>
+        /// <param name="role"></param>
+        /// <returns></returns>
         [HttpPut]
 
-        public IActionResult Update(StudentRole role)
+        public async Task<IActionResult> Update(CreateStudentRoleRequest request)
         {
-            Context.StudentRoles.Update(role);
+            var userDto = request.Adapt<StudentRole>();
+            Context.StudentRoles.Update(userDto);
             Context.SaveChanges();
-            return Ok(role);
+            return Ok();
         }
-
+        /// <summary>
+        /// Удаление роли
+        /// </summary>
+        /// <param name="roleID"></param>
+        /// <returns></returns>
         [HttpDelete]
 
         public IActionResult Delete(int roleID)

@@ -476,11 +476,11 @@ namespace DataAccess.Models
                 entity.Property(e => e.IdChat)
                       .HasColumnName("id_chat");
 
-                     entity.HasOne(d => d.Chat)
-                           .WithMany(p => p.StudentGroup)
-                           .HasForeignKey(d => d.IdChat)
-                           .OnDelete(DeleteBehavior.ClientSetNull)
-                           .HasConstraintName("FK_Student_Group_Student_Chat");
+                entity.HasOne(d => d.Chat)
+                      .WithMany(p => p.StudentGroup)
+                      .HasForeignKey(d => d.IdChat)
+                      .OnDelete(DeleteBehavior.ClientSetNull)
+                      .HasConstraintName("FK_Student_Group_Student_Chat");
 
                 entity.Property(e => e.DeletedBy).HasColumnName("deleted_by");
 

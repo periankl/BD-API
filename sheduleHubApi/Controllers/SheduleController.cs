@@ -1,6 +1,9 @@
 ﻿using DataAccess.Models;
+using Mapster;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SheduleHubAPI.Contracts.Shedule;
+using SheduleHubAPI.Contracts.Student;
 
 namespace SheduleHubAPI.Controllers
 {
@@ -15,6 +18,10 @@ namespace SheduleHubAPI.Controllers
             Context = context;
         }
 
+        /// <summary>
+        /// Получение всех расписания
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
 
         public IActionResult GetAll()
@@ -23,7 +30,14 @@ namespace SheduleHubAPI.Controllers
             return Ok(shedule);
         }
 
-        [HttpGet("{id}")]
+        /// <summary>
+        /// Поиск расписания
+        /// </summary>
+        /// <param name="date"></param>
+        /// <param name="lesson_number"></param>
+        /// <param name="disciplineID"></param>
+        /// <returns></returns>
+        [HttpGet("{date, lesson_number, disciplineID}")]
 
         public IActionResult Get(DateTime date, int lesson_number, int disciplineID)
         {
@@ -35,24 +49,62 @@ namespace SheduleHubAPI.Controllers
             return Ok(shedule);
         }
 
+
+        /// <summary>
+        /// Создание нового расписания
+        /// </summary>
+        /// <remarks>
+        ///     Пример заполнеия:
+        ///     
+        ///             Post /Todo
+        ///             {
+        ///                   "dateShedule": "2024-01-19T08:50:44.877Z",
+        ///                   "lessNum": 3,
+        ///                   "idDiscipline": 1,
+        ///                   "idGroup": 1,
+        ///                   "idHomework": 319,
+        ///                   "cabinet": "28Б",
+        ///                   "createdBy": 1,
+        ///                   "createdAt": "2024-01-19T08:50:44.877Z",
+        ///             }
+        ///             
+        /// </remarks>
+        /// <param name="shedule"></param>
+        /// <returns></returns>
+
+        // Post api/<SheduleController>
         [HttpPost]
 
-        public IActionResult Add(Shedule shedule)
+        public async Task<IActionResult> Add(CreateSheduleRequest request)
         {
-            Context.Shedules.Add(shedule);
+            var userDto = request.Adapt<Shedule>();
+            Context.Shedules.Add(userDto);
             Context.SaveChanges();
-            return Ok(shedule);
+            return Ok();
         }
 
+        /// <summary>
+        /// Изменение расписания
+        /// </summary>
+        /// <param name="shedule"></param>
+        /// <returns></returns>
         [HttpPut]
 
-        public IActionResult Update(Shedule shedule)
+        public async Task<IActionResult> Update(CreateSheduleRequest request)
         {
-            Context.Shedules.Update(shedule);
+            var userDto = request.Adapt<Shedule>();
+            Context.Shedules.Update(userDto);
             Context.SaveChanges();
-            return Ok(shedule);
+            return Ok();
         }
 
+        /// <summary>
+        /// Удаление расписания
+        /// </summary>
+        /// <param name="date"></param>
+        /// <param name="lesson_number"></param>
+        /// <param name="disciplineID"></param>
+        /// <returns></returns>
         [HttpDelete]
 
         public IActionResult Delete(DateTime date, int lesson_number, int disciplineID)

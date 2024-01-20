@@ -1,6 +1,9 @@
 ﻿using DataAccess.Models;
+using Mapster;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SheduleHubAPI.Contracts.MessageStatus;
+using SheduleHubAPI.Contracts.Student;
 
 namespace SheduleHubAPI.Controllers
 {
@@ -15,6 +18,10 @@ namespace SheduleHubAPI.Controllers
             Context = context;
         }
 
+        /// <summary>
+        /// Получение статусов сообщений
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
 
         public IActionResult GetAll()
@@ -23,6 +30,11 @@ namespace SheduleHubAPI.Controllers
             return Ok(messageStatus);
         }
 
+        /// <summary>
+        /// Получение статуса сообщения по id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
 
         public IActionResult Get(int id)
@@ -35,24 +47,53 @@ namespace SheduleHubAPI.Controllers
             return Ok(messageStatus);
         }
 
+        /// <summary>
+        /// Добавление нового статуса сообщения
+        /// </summary>
+        /// <remarks>
+        /// Пример заполнения:
+        /// 
+        ///         Post /Todo
+        ///         {
+        ///            "nameStatus": "string",
+        ///            "createdBy": 0,
+        ///            "createdAt": "2024-01-19T08:43:51.471Z"
+        ///          }
+        /// </remarks>
+        /// <param name="Статус сообщения"></param>
+        /// <returns></returns>
+
+        // Post api/<MessageStatusController>
         [HttpPost]
 
-        public IActionResult Add(MessageStatus messageStatus)
+        public async Task<IActionResult> Add(CreateMessageStatusRequest request)
         {
-            Context.MessageStatuses.Add(messageStatus);
+            var userDto = request.Adapt<MessageStatus>();
+            Context.MessageStatuses.Add(userDto);
             Context.SaveChanges();
-            return Ok(messageStatus);
+            return Ok();
         }
 
+        /// <summary>
+        /// Изменение сообщения
+        /// </summary>
+        /// <param name="messageStatus"></param>
+        /// <returns></returns>
         [HttpPut]
 
-        public IActionResult Update(MessageStatus messageStatus)
+        public async Task<IActionResult> Update(CreateMessageStatusRequest request)
         {
-            Context.MessageStatuses.Update(messageStatus);
+            var userDto = request.Adapt<MessageStatus>();
+            Context.MessageStatuses.Update(userDto);
             Context.SaveChanges();
-            return Ok(messageStatus);
+            return Ok();
         }
 
+        /// <summary>
+        /// Удаления сообщения
+        /// </summary>
+        /// <param name="messageStatusId"></param>
+        /// <returns></returns>
         [HttpDelete]
 
         public IActionResult Delete(int messageStatusId)

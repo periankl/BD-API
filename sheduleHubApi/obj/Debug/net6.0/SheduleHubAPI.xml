@@ -1,0 +1,527 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SheduleHubAPI</name>
+    </assembly>
+    <members>
+        <member name="M:SheduleHubAPI.Controllers.ChatController.GetAll">
+            <summary>
+            Получение всех чатов
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.ChatController.Get(System.Int32)">
+            <summary>
+            Поиск чата по id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.ChatController.Add(SheduleHubAPI.Contracts.Chat.CreateChatRequest)">
+             <summary>
+             Добавление чата
+             </summary>
+             <remarks>
+             Пример заполнения:
+             
+                 Post /Todo
+                 {    
+                     "idChat": 1,
+                     "nameChat": "string",
+                     "icon": "string",
+                     "createdBy": 2,
+                     "createdAt": "2024-01-18T11:44:24.647",
+                     "studentGroup": null
+                  }
+            
+             </remarks>
+             <param name="Чат"></param>
+             <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.ChatController.Update(SheduleHubAPI.Contracts.Chat.CreateChatRequest)">
+            <summary>
+            Изменение существующего чата
+            </summary>
+            <param name="chat"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.ChatController.Delete(System.Int32)">
+            <summary>
+            Удаление чата
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.ChatMessageController.GetAll">
+            <summary>
+            Получение всех сообщений
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.ChatMessageController.Get(System.Int32)">
+            <summary>
+            Получение чата по id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.ChatMessageController.Add(SheduleHubAPI.Contracts.ChatMessage.CreateChatMessageRequest)">
+            <summary>
+            Создание новго сообщения
+            </summary>
+            <remarks>
+            Пример заполнения:
+            
+                Post /Todo
+                {
+                    "idSender": 1,
+                    "textMessage": "C открытием SheduleHub",
+                    "idStatus": 3,
+                    "dateMessage": "2024-01-18T00:00:00",
+                    "idChat": 1,
+                    "createdBy": 1,
+                    "createdAt": "2024-01-18T12:15:34.217"
+                }
+            
+            </remarks>
+            <param name="chatMessage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.ChatMessageController.Update(SheduleHubAPI.Contracts.ChatMessage.CreateChatMessageRequest)">
+            <summary>
+            Изменение существующего сообщения
+            </summary>
+            <param name="chatMessage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.ChatMessageController.Delete(System.Int32)">
+            <summary>
+            Удаление сообщения
+            </summary>
+            <param name="messageId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.ChatUserController.GetAll">
+            <summary>
+            Получение всех пользователей чатов
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.ChatUserController.Get(System.Int32,System.Int32)">
+            <summary>
+            Получение пользователя из чата (chatID, userID)
+            </summary>
+            <remarks>
+            Пример заполнения: 
+            1,1
+            </remarks>
+            <param name="chatID"></param>
+            <param name="userID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.ChatUserController.Add(SheduleHubAPI.Contracts.ChatUser.CreateChatUserRequest)">
+            <summary>
+            Добавление пользователя в чат
+            </summary>
+            <remarks>
+            Пример заполнения:
+            
+                Post /Todo
+                { 
+                      "idStudent": 0,
+                      "idChat": 0,
+                      "joinAt": "2024-01-19T08:35:25.251Z"
+                }
+                
+            </remarks>
+            <param name="chatUser"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.ChatUserController.Update(SheduleHubAPI.Contracts.ChatUser.CreateChatUserRequest)">
+            <summary>
+            Обновление пользователей чата
+            </summary>
+            <param name="chatUser"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.ChatUserController.Delete(System.Int32,System.Int32)">
+            <summary>
+            Удаление пользователя из чата
+            </summary>
+            <param name="chatID"></param>
+            <param name="userID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.DisciplinesController.GetAll">
+            <summary>
+            Получение всех дисциплин
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.DisciplinesController.Get(System.Int32)">
+            <summary>
+            Получение дисциплины по id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.DisciplinesController.Add(SheduleHubAPI.Contracts.Discipline.CreateDisciplineRequest)">
+            <summary>
+            Добавление дисциплины
+            </summary>
+            <remarks>
+            Пример заполнения:
+            
+                    Post /Todo
+                    {  
+                        "nameDiscipline": "string",
+                        "idSpeciality": 0,
+                        "numCourse": 0,
+                        "createdBy": 0,
+                        "createdAt": "2024-01-19T08:36:34.725Z"
+                     }
+              
+            </remarks>
+            <param name="discipline"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.DisciplinesController.Update(SheduleHubAPI.Contracts.Discipline.CreateDisciplineRequest)">
+            <summary>
+            Изменение дисциплины
+            </summary>
+            <param name="discipline"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.DisciplinesController.Delete(System.Int32)">
+            <summary>
+            Удаление дициплины
+            </summary>
+            <param name="disciplineID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.HomeworkController.GetAll">
+            <summary>
+            Получение всех домашних работ
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.HomeworkController.Get(System.Int32)">
+            <summary>
+            Получение домашней работы по id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.HomeworkController.Add(SheduleHubAPI.Contracts.Homework.CreateHomeworkRequest)">
+            <summary>
+            Добавление нового домашнего задания
+            </summary>
+            <remarks>
+            Пример заполнения:
+            
+                Post /Todo
+                {
+                     "task": "string",
+                     "createdBy": 0,
+                     "createdAt": "2024-01-19T08:41:15.690Z"
+                 }
+                 
+            </remarks>
+            <param name="homework"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.HomeworkController.Update(SheduleHubAPI.Contracts.Homework.CreateHomeworkRequest)">
+            <summary>
+            Изменение домашней работы
+            </summary>
+            <param name="homework"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.HomeworkController.Delete(System.Int32)">
+            <summary>
+            Удаление домашней работы
+            </summary>
+            <param name="homeworkId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.MessageStatusController.GetAll">
+            <summary>
+            Получение статусов сообщений
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.MessageStatusController.Get(System.Int32)">
+            <summary>
+            Получение статуса сообщения по id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.MessageStatusController.Add(SheduleHubAPI.Contracts.MessageStatus.CreateMessageStatusRequest)">
+            <summary>
+            Добавление нового статуса сообщения
+            </summary>
+            <remarks>
+            Пример заполнения:
+            
+                    Post /Todo
+                    {
+                       "nameStatus": "string",
+                       "createdBy": 0,
+                       "createdAt": "2024-01-19T08:43:51.471Z"
+                     }
+            </remarks>
+            <param name="Статус сообщениясообщения"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.MessageStatusController.Update(SheduleHubAPI.Contracts.MessageStatus.CreateMessageStatusRequest)">
+            <summary>
+            Изменение сообщения
+            </summary>
+            <param name="messageStatus"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.MessageStatusController.Delete(System.Int32)">
+            <summary>
+            Удаления сообщения
+            </summary>
+            <param name="messageStatusId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.RoleController.GetAll">
+            <summary>
+            Получение всех ролей пользовталей
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.RoleController.Get(System.Int32)">
+            <summary>
+            Получение роли по id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.RoleController.Add(SheduleHubAPI.Contracts.StudentRole.CreateStudentRoleRequest)">
+            <summary>
+            Создание нового пользователя
+            </summary>
+            <remarks>
+            Пример запроса: 
+            
+                Post /Todo
+                { 
+                      "nameRole": "string",
+                      "createdBy": 0,
+                      "createdAt": "2024-01-19T09:08:17.851Z"
+                 }
+                
+            </remarks>
+            <param name="Роль"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.RoleController.Update(SheduleHubAPI.Contracts.StudentRole.CreateStudentRoleRequest)">
+            <summary>
+            Изменение роли
+            </summary>
+            <param name="role"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.RoleController.Delete(System.Int32)">
+            <summary>
+            Удаление роли
+            </summary>
+            <param name="roleID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.SheduleController.GetAll">
+            <summary>
+            Получение всех расписания
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.SheduleController.Get(System.DateTime,System.Int32,System.Int32)">
+            <summary>
+            Поиск расписания
+            </summary>
+            <param name="date"></param>
+            <param name="lesson_number"></param>
+            <param name="disciplineID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.SheduleController.Add(SheduleHubAPI.Contracts.Shedule.CreateSheduleRequest)">
+            <summary>
+            Создание нового расписания
+            </summary>
+            <remarks>
+                Пример заполнеия:
+                
+                        Post /Todo
+                        {
+                              "dateShedule": "2024-01-19T08:50:44.877Z",
+                              "lessNum": 3,
+                              "idDiscipline": 1,
+                              "idGroup": 1,
+                              "idHomework": 319,
+                              "cabinet": "28Б",
+                              "createdBy": 1,
+                              "createdAt": "2024-01-19T08:50:44.877Z",
+                        }
+                        
+            </remarks>
+            <param name="shedule"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.SheduleController.Update(SheduleHubAPI.Contracts.Shedule.CreateSheduleRequest)">
+            <summary>
+            Изменение расписания
+            </summary>
+            <param name="shedule"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.SheduleController.Delete(System.DateTime,System.Int32,System.Int32)">
+            <summary>
+            Удаление расписания
+            </summary>
+            <param name="date"></param>
+            <param name="lesson_number"></param>
+            <param name="disciplineID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.SpecialityController.GetAll">
+            <summary>
+            Получение всех специальностей
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.SpecialityController.Get(System.Int32)">
+            <summary>
+            Поиск специальности по id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.SpecialityController.Add(SheduleHubAPI.Contracts.Speciality.CreateSpecialityRequest)">
+            <summary>
+            Добавление специальности
+            </summary>
+            <remarks>
+            План заполнение: 
+            
+                    Post /Todo
+                    {
+                       "nameSpeciality": "string",
+                       "createdBy": 0,
+                       "createdAt": "2024-01-19T08:56:19.871Z"
+                    }
+            </remarks>
+            <param name="speciality"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.SpecialityController.Update(SheduleHubAPI.Contracts.Speciality.CreateSpecialityRequest)">
+            <summary>
+            Изменение специальности
+            </summary>
+            <param name="speciality"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.SpecialityController.Delete(System.Int32)">
+            <summary>
+            Удаление 
+            </summary>
+            <param name="specialityID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.StudentController.GetAll">
+            <summary>
+            Получить всех пользователей
+            </summary>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.StudentController.Get(System.Int32)">
+            <summary>
+            Поиск пользователя по id
+            </summary>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.StudentController.Add(SheduleHubAPI.Contracts.Student.CreateStudentRequest)">
+            <summary>
+            Создание нового пользователя
+            </summary>
+            <remarks>
+            Пример запроса: 
+            
+                Post /Todo
+                { 
+                   "email": "string",
+                   "pssword": "string",
+                   "nameFirst": "string",
+                   "surname": "string",
+                   "patronymic": "string",
+                   "birthDate": "2024-01-19T08:04:39.556Z",
+                   "idGroup": 0,
+                   "idRole": 0,
+                   "createdBy": 0,
+                   "createdAt": "2024-01-19T08:04:39.556Z"
+                 }
+                
+            </remarks>
+            <param name="Пользователь"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.StudentController.Update(SheduleHubAPI.Contracts.Student.CreateStudentRequest)">
+            <summary>
+            Изменение пользователя
+            </summary>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.StudentController.Delete(System.Int32)">
+            <summary>
+            Удаление пользователя
+            </summary>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.StudentGroupController.GetAll">
+            <summary>
+            Получение всех групп
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.StudentGroupController.Get(System.Int32)">
+            <summary>
+            Поиск группы по id
+            </summary>
+            <param name="groupID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.StudentGroupController.Add(SheduleHubAPI.Contracts.StudentGroup.CreateStudentGroupRequest)">
+            <summary>
+            Добавление группы
+            </summary>
+            <remarks>
+            Пример заполнения:
+            
+                    POST /Todo
+                    {
+                      "nameGroup": "string",
+                      "idSpeciality": 0,
+                      "courseNum": 0,
+                      "createdBy": 0,
+                      "createdAt": "2024-01-19T08:58:43.790Z"
+                    }
+              
+            </remarks>
+            <param name="group"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.StudentGroupController.Update(SheduleHubAPI.Contracts.StudentGroup.CreateStudentGroupRequest)">
+            <summary>
+            Изменение группы
+            </summary>
+            <param name="group"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SheduleHubAPI.Controllers.StudentGroupController.Delete(System.Int32)">
+            <summary>
+            Удаление группы
+            </summary>
+            <param name="groupID"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

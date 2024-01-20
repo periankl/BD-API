@@ -1,6 +1,9 @@
 ﻿using DataAccess.Models;
+using Mapster;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SheduleHubAPI.Contracts.Discipline;
+using SheduleHubAPI.Contracts.Student;
 
 namespace SheduleHubAPI.Controllers
 {
@@ -15,6 +18,11 @@ namespace SheduleHubAPI.Controllers
             Context = context;
         }
 
+
+        /// <summary>
+        /// Получение всех дисциплин
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
 
         public IActionResult GetAll()
@@ -23,6 +31,12 @@ namespace SheduleHubAPI.Controllers
             return Ok(disciplines);
         }
 
+
+        /// <summary>
+        /// Получение дисциплины по id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
 
         public IActionResult Get(int id)
@@ -35,24 +49,55 @@ namespace SheduleHubAPI.Controllers
             return Ok(discipline);
         }
 
+        /// <summary>
+        /// Добавление дисциплины
+        /// </summary>
+        /// <remarks>
+        /// Пример заполнения:
+        /// 
+        ///         Post /Todo
+        ///         {  
+        ///             "nameDiscipline": "string",
+        ///             "idSpeciality": 0,
+        ///             "numCourse": 0,
+        ///             "createdBy": 0,
+        ///             "createdAt": "2024-01-19T08:36:34.725Z"
+        ///          }
+        ///   
+        /// </remarks>
+        /// <param name="discipline"></param>
+        /// <returns></returns>
+        // Post api/<DisciplinesController>
         [HttpPost]
 
-        public IActionResult Add(Discipline discipline)
+        public async Task<IActionResult> Add(CreateDisciplineRequest request)
         {
-            Context.Disciplines.Add(discipline);
+            var userDto = request.Adapt<Discipline>();
+            Context.Disciplines.Add(userDto);
             Context.SaveChanges();
-            return Ok(discipline);
+            return Ok();
         }
-
+        /// <summary>
+        /// Изменение дисциплины
+        /// </summary>
+        /// <param name="discipline"></param>
+        /// <returns></returns>
         [HttpPut]
 
-        public IActionResult Update(Discipline discipline)
+        public async Task<IActionResult> Update(CreateDisciplineRequest request)
         {
-            Context.Disciplines.Update(discipline);
+            var userDto = request.Adapt<Discipline>();
+            Context.Disciplines.Update(userDto);
             Context.SaveChanges();
-            return Ok(discipline);
+            return Ok();
         }
 
+
+        /// <summary>
+        /// Удаление дициплины
+        /// </summary>
+        /// <param name="disciplineID"></param>
+        /// <returns></returns>
         [HttpDelete]
 
         public IActionResult Delete(int disciplineID)

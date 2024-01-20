@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitHub\\BD-API\\SheduleHubAPI\\SheduleHubAPI.csproj": {}
+    "C:\\Users\\dshin\\OneDrive\\Рабочий стол\\sheduleHubAPI\\SheduleHubAPI\\SheduleHubAPI.csproj": {}
   },
   "projects": {
-    "D:\\GitHub\\BD-API\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\dshin\\OneDrive\\Рабочий стол\\sheduleHubAPI\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\BD-API\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\dshin\\OneDrive\\Рабочий стол\\sheduleHubAPI\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "D:\\GitHub\\BD-API\\DataAccess\\DataAccess.csproj",
-        "packagesPath": "C:\\Users\\peria\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\BD-API\\DataAccess\\obj\\",
+        "projectPath": "C:\\Users\\dshin\\OneDrive\\Рабочий стол\\sheduleHubAPI\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\dshin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dshin\\OneDrive\\Рабочий стол\\sheduleHubAPI\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\peria\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\dshin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -73,21 +73,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\GitHub\\BD-API\\SheduleHubAPI\\SheduleHubAPI.csproj": {
+    "C:\\Users\\dshin\\OneDrive\\Рабочий стол\\sheduleHubAPI\\SheduleHubAPI\\SheduleHubAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\BD-API\\SheduleHubAPI\\SheduleHubAPI.csproj",
+        "projectUniqueName": "C:\\Users\\dshin\\OneDrive\\Рабочий стол\\sheduleHubAPI\\SheduleHubAPI\\SheduleHubAPI.csproj",
         "projectName": "SheduleHubAPI",
-        "projectPath": "D:\\GitHub\\BD-API\\SheduleHubAPI\\SheduleHubAPI.csproj",
-        "packagesPath": "C:\\Users\\peria\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\BD-API\\SheduleHubAPI\\obj\\",
+        "projectPath": "C:\\Users\\dshin\\OneDrive\\Рабочий стол\\sheduleHubAPI\\SheduleHubAPI\\SheduleHubAPI.csproj",
+        "packagesPath": "C:\\Users\\dshin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dshin\\OneDrive\\Рабочий стол\\sheduleHubAPI\\SheduleHubAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\peria\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\dshin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -101,8 +101,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\GitHub\\BD-API\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "D:\\GitHub\\BD-API\\DataAccess\\DataAccess.csproj"
+              "C:\\Users\\dshin\\OneDrive\\Рабочий стол\\sheduleHubAPI\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\dshin\\OneDrive\\Рабочий стол\\sheduleHubAPI\\DataAccess\\DataAccess.csproj"
               }
             }
           }
@@ -117,6 +117,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Mapster": {
+              "target": "Package",
+              "version": "[7.3.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -151,7 +155,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
