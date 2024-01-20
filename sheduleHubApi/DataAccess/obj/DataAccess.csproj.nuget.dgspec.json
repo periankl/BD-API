@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dshin\\OneDrive\\Рабочий стол\\SheduleHubAPI\\DataAccess\\DataAccess.csproj": {}
+    "D:\\GitHub\\BD-API\\sheduleHubApi\\DataAccess\\DataAccess.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dshin\\OneDrive\\Рабочий стол\\SheduleHubAPI\\DataAccess\\DataAccess.csproj": {
+    "D:\\GitHub\\BD-API\\sheduleHubApi\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dshin\\OneDrive\\Рабочий стол\\SheduleHubAPI\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "D:\\GitHub\\BD-API\\sheduleHubApi\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\dshin\\OneDrive\\Рабочий стол\\SheduleHubAPI\\DataAccess\\DataAccess.csproj",
-        "packagesPath": "C:\\Users\\dshin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dshin\\OneDrive\\Рабочий стол\\SheduleHubAPI\\DataAccess\\obj\\",
+        "projectPath": "D:\\GitHub\\BD-API\\sheduleHubApi\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\peria\\.nuget\\packages\\",
+        "outputPath": "D:\\GitHub\\BD-API\\sheduleHubApi\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\dshin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\peria\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -73,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
