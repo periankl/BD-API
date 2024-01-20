@@ -19,8 +19,4 @@
     <ProjectReference Include="..\DataAccess\DataAccess.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <EditorConfigFiles Remove="D:\GitHub\BD-API\sheduleHubApi\SheduleHubAPI\.editorconfig" />
-  </ItemGroup>
-
 </Project>

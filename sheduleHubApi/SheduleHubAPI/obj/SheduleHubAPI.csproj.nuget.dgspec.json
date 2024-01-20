@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitHub\\BD-API\\sheduleHubApi\\SheduleHubAPI\\SheduleHubAPI.csproj": {}
+    "C:\\Users\\dshin\\OneDrive\\Рабочий стол\\SheduleHubAPI\\SheduleHubAPI\\SheduleHubAPI.csproj": {}
   },
   "projects": {
-    "D:\\GitHub\\BD-API\\sheduleHubApi\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\dshin\\OneDrive\\Рабочий стол\\SheduleHubAPI\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\BD-API\\sheduleHubApi\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\dshin\\OneDrive\\Рабочий стол\\SheduleHubAPI\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "D:\\GitHub\\BD-API\\sheduleHubApi\\DataAccess\\DataAccess.csproj",
-        "packagesPath": "C:\\Users\\peria\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\BD-API\\sheduleHubApi\\DataAccess\\obj\\",
+        "projectPath": "C:\\Users\\dshin\\OneDrive\\Рабочий стол\\SheduleHubAPI\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\dshin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dshin\\OneDrive\\Рабочий стол\\SheduleHubAPI\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\peria\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\dshin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -73,21 +73,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\GitHub\\BD-API\\sheduleHubApi\\SheduleHubAPI\\SheduleHubAPI.csproj": {
+    "C:\\Users\\dshin\\OneDrive\\Рабочий стол\\SheduleHubAPI\\SheduleHubAPI\\SheduleHubAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\BD-API\\sheduleHubApi\\SheduleHubAPI\\SheduleHubAPI.csproj",
+        "projectUniqueName": "C:\\Users\\dshin\\OneDrive\\Рабочий стол\\SheduleHubAPI\\SheduleHubAPI\\SheduleHubAPI.csproj",
         "projectName": "SheduleHubAPI",
-        "projectPath": "D:\\GitHub\\BD-API\\sheduleHubApi\\SheduleHubAPI\\SheduleHubAPI.csproj",
-        "packagesPath": "C:\\Users\\peria\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\BD-API\\sheduleHubApi\\SheduleHubAPI\\obj\\",
+        "projectPath": "C:\\Users\\dshin\\OneDrive\\Рабочий стол\\SheduleHubAPI\\SheduleHubAPI\\SheduleHubAPI.csproj",
+        "packagesPath": "C:\\Users\\dshin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dshin\\OneDrive\\Рабочий стол\\SheduleHubAPI\\SheduleHubAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\peria\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\dshin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -101,8 +101,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\GitHub\\BD-API\\sheduleHubApi\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "D:\\GitHub\\BD-API\\sheduleHubApi\\DataAccess\\DataAccess.csproj"
+              "C:\\Users\\dshin\\OneDrive\\Рабочий стол\\SheduleHubAPI\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\dshin\\OneDrive\\Рабочий стол\\SheduleHubAPI\\DataAccess\\DataAccess.csproj"
               }
             }
           }
@@ -151,7 +151,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
