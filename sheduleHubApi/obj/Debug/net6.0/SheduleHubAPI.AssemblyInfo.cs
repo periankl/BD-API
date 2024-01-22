@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SheduleHubAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+96254826e41b4a54b0898f67481cbc82e41a6a40")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0abf9f9361a113b6abb9efbb71957154feb65363")]
 [assembly: System.Reflection.AssemblyProductAttribute("SheduleHubAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SheduleHubAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
